@@ -1,8 +1,10 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Las Mejores Películas de 2024</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         /* En el fichero style.css teneis todos los enunciados de los estilos que debeis darle al proyecto */
 
@@ -12,19 +14,6 @@
             a los enunciados.
             
         */
-        Elementos con la clase pelicula-item {
-            border-radius: 5 px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-        }
-        Etiqueta button que está dentro del elemento con la clase pelicula-item {
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 3 px;
-        }
     </style>
 </head>
 <body>
@@ -50,7 +39,30 @@
         Describe brevemente las fases de desarrollo que has identificado en este proyecto 
         en el fichero de texto fasesDesarrollo.txt
         -->
-
+    <main>
+        <ul id="peliculasLista">
+            <li class="peliculaItem">
+                <span>Torrente 1</span>
+                <button onclick="eliminarPelicula(this)">Eliminar</button>
+            </li>
+            <li class="peliculaItem">
+                <span>Torrente 2</span>
+                <button onclick="eliminarPelicula(this)">Eliminar</button>
+            </li>
+            <li class="peliculaItem">
+                <span>Torrente 3</span>
+                <button onclick="eliminarPelicula(this)">Eliminar</button>
+            </li>
+            <li class="peliculaItem">
+                <span>Torrente 4</span>
+                <button onclick="eliminarPelicula(this)">Eliminar</button>
+            </li>
+            <li class="peliculaItem">
+                <span>Torrente 5</span>
+                <button onclick="eliminarPelicula(this)">Eliminar</button>
+            </li>                                                            
+        </ul>
+    </main>
     <!-- Podeis dejar aqui toda la logica de javascript o llevarlo a un fichero externo .js recordad que si lo haceis en la etiqueta head debeis utilizar defer -->
     <script>
         //Funcion para eliminar pelicula 
@@ -58,6 +70,12 @@
         // hace referencia al elemento que le pasemos por parametro en las etiquetas HTML
         function eliminarPelicula(boton) {
             //Añadir lógica para eliminar el elemento li, que es el elemento padre del button
+            console.log("boton:", boton);
+
+            let elementoPadre = boton.parentElement;
+            console.log("elementoPadre:", elementoPadre);
+
+            elementoPadre.remove();
         }
     </script>
 
