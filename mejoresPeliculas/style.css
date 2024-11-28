@@ -71,7 +71,7 @@ Etiqueta button que está dentro del elemento con la clase pelicula-item:
 
  */
 
- .peliculaItem > button{
+ .peliculaItem > button, button{
     background-color: crimson;
     color: whitesmoke;
     padding: 5px 10px;
@@ -86,6 +86,13 @@ Etiqueta button que está dentro del elemento con la clase pelicula-item al pasa
 
 */
 
-.peliculaItem > button:hover {
+.peliculaItem > button:hover, button:hover {
     background-color: darkred;
+}
+
+/*Estilo para el boton que modifica el fondo*/
+button#cambiarFondo {
+    width: 98%;
+    margin-left: 10px;
+    border-radius: 25px;
 }

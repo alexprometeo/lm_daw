@@ -5,79 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Las Mejores Películas de 2024</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* En el fichero style.css teneis todos los enunciados de los estilos que debeis darle al proyecto */
-
-        /* 
-            Modificad el texto de los selectores para que seleccione correctamente los elementos descritos, 
-            llevadlo al fichero style.css, enlazadlo correctamente y añadid los estilos que falten en base 
-            a los enunciados.
-            
-        */
-    </style>
 </head>
 <body>
     <header>
-        <h1>Las mejores peliculas de 2024</h1>
+        <h1>Las mejores películas de 2024</h1>
     </header>
-    <!-- Añadir aqui la estructura con las etiquetas faltantes -->
-	<!-- Crear la lista de películas: 
-		A continuación, crea una lista de películas dentro de un elemento <ul> (lista desordenada). 
-		El atributo identificador "peliculasLista" se debe usar para identificar esta lista de películas.
-	
-		Dentro de la lista, cada película estará representada como un ítem (<li>) con la clase "peliculaItem". 
-		En cada ítem, coloca el nombre de la película dentro de una etiqueta <span> y un botón (<button>) para eliminar la película. 
-
-		El botón (<button>) debe tener un atributo onclick que ejecute la función eliminarPelicula(this). 
-		* "this" hace referencia al propio elemento "button". Debéis ponerlo tal cual:  	
-			<button onclick="eliminarPelicula(this)">Eliminar</button>
-
-        Valida el documento html y el fichero css y corrigelos.
-
-        Adjunta en el proyecto una captura con las extensiones instaladas de tu VSCode.
-
-        Describe brevemente las fases de desarrollo que has identificado en este proyecto 
-        en el fichero de texto fasesDesarrollo.txt
-        -->
     <main>
         <ul id="peliculasLista">
             <li class="peliculaItem">
-                <span>Torrente 1</span>
+                <span>La sustancia</span>
                 <button onclick="eliminarPelicula(this)">Eliminar</button>
             </li>
             <li class="peliculaItem">
-                <span>Torrente 2</span>
+                <span>Dune: Parte II</span>
                 <button onclick="eliminarPelicula(this)">Eliminar</button>
             </li>
             <li class="peliculaItem">
-                <span>Torrente 3</span>
+                <span>Spider-Man: Across the Spider-Verse</span>
                 <button onclick="eliminarPelicula(this)">Eliminar</button>
             </li>
-            <li class="peliculaItem">
-                <span>Torrente 4</span>
-                <button onclick="eliminarPelicula(this)">Eliminar</button>
-            </li>
-            <li class="peliculaItem">
-                <span>Torrente 5</span>
-                <button onclick="eliminarPelicula(this)">Eliminar</button>
-            </li>                                                            
         </ul>
+        <button id="cambiarFondo" onclick="cambiarColorFondo()">Cambiar Color de Fondo</button>
     </main>
-    <!-- Podeis dejar aqui toda la logica de javascript o llevarlo a un fichero externo .js recordad que si lo haceis en la etiqueta head debeis utilizar defer -->
     <script>
-        //Funcion para eliminar pelicula 
-        // la variable "boton" dentro de la función
-        // hace referencia al elemento que le pasemos por parametro en las etiquetas HTML
+        // Función para eliminar una película
         function eliminarPelicula(boton) {
-            //Añadir lógica para eliminar el elemento li, que es el elemento padre del button
-            console.log("boton:", boton);
+            console.log("Elemento pasado por parametro: ", boton);
 
-            let elementoPadre = boton.parentElement;
-            console.log("elementoPadre:", elementoPadre);
+            const elementoPadre = boton.parentElement;
+
+            console.log("Elemento padre: ", elementoPadre);
 
             elementoPadre.remove();
+
+            console.log("Película eliminada:", elementoPadre.querySelector("span").textContent);
+        }
+
+        // Función para cambiar el color de fondo a un color aleatorio
+        function cambiarColorFondo() {
+            const letras = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letras[Math.floor(Math.random() * 16)];
+                console.log("elemento para formar la variable color: ", color);
+            }
+            //console.log(`Color de fondo cambiado a: ${color}`);
+            //document.body.style.backgroundColor = color;
+            document.body.style =`background-color: ${color}`;
+
         }
     </script>
-
 </body>
 </html>
