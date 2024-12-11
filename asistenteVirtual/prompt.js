@@ -23,11 +23,18 @@ if (opcion == 1) {
 
     let num1 = Number(prompt("Introduce el 1er nº"));
     let num2 = Number(prompt("Introduce el 2do nº"));
+    let operacion = prompt("¿Qué operación deseas realizar con esos números? (+, -, *, /)");
 
-    let resultado = Number(num1) + Number(num2);
-    let resultadoPrompt = num1 + num2;
+    let resultado = 0;
 
-    console.log("La suma de los dos números es: ", resultadoPrompt);
+    console.log("Operación elegida:", operacion);
+
+    if (operacion === "+") resultado = num1 + num2;
+    if (operacion === "-") resultado = num1 - num2;
+    if (operacion === "*") resultado = num1 * num2;
+    if (operacion === "/") resultado = num1 / num2;
+
+    console.log("Resultado de la operación:",operacion, "entre el nº:", num1, " y nº 2:", num2, "es:", resultado);
 
 }
 else if (opcion == 2) {
@@ -36,15 +43,23 @@ else if (opcion == 2) {
     let numRandom = Math.floor(Math.random() * 10) + 1;
     console.log("Número aleatorio: ", numRandom);
 
-    let userNumber = prompt("Escribe un número del 1 al 10");
+    
+    let intentos = 3;
+    for (intentos; intentos > 0; intentos--) {
+        let userNumber = prompt("Escribe un número del 1 al 10");
 
-    console.log("User number:", userNumber);
-
-    if (numRandom === Number(userNumber)) {
-        alert("WOW, has acertado!!");
-    } else {
-        console.log("Nope :(");
+        if (numRandom === Number(userNumber)) {
+            alert("WOW, has acertado!!");
+            break;
+        } else {
+            console.log("Nope :(");
+        }
     }
+
+    if (intentos === 0) {
+        alert("Sorry, no has acertado, el nº era " + numRandom);
+    }
+
 }
 else {
     alert("Solo tenemos 2 actividades :(");
