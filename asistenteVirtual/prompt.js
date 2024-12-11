@@ -1,23 +1,31 @@
 console.log("Iniciando asistente...");
 
-// let nombre = prompt("¿Cuál es tu nombre?");
-// console.log("Encantado de conocerte ", nombre, "!");
+// Preguntar por el nombre del usuario
+let nombre = prompt("¿Cuál es tu nombre?");
+console.log("Encantado de conocerte ", nombre, "!");
 
+
+//Declarar varible de fecha
 let currentYear = new Date();
 console.log("Valor de año actual", currentYear);
 
-//currentYear = currentYear.getFullYear();
-//console.log("Valor de año actual", currentYear);
+// Recuperar el año actual de la nueva variable de fecha
+currentYear = currentYear.getFullYear();
+console.log("Valor de año actual", currentYear);
 
-//let userYear = prompt("¿En que año naciste?");
-//console.log("Año de nacimiento del usuario: ", userYear);
+// Preguntar por el año de nacimiento al usuario
+let userYear = prompt("¿En que año naciste?");
+console.log("Año de nacimiento del usuario: ", userYear);
 
-//let birthday = currentYear - userYear;
+// Hacer la resta del año actual para sacar su edad aproximada
+let birthday = currentYear - userYear;
 
-//console.log("Oh, tienes", birthday," genial!");
+console.log("Oh, tienes", birthday," genial!");
 
+// Preguntar por al usuario que elija una opción entre 1 o 2
 let opcion = prompt ("¿Qué actividad quieres hacer? 1 o 2");
 
+// La opción 1 hace una operación de 2 nº 
 if (opcion == 1) {
     console.log("Has elegido la opción 1");
 
@@ -65,5 +73,4 @@ else {
     alert("Solo tenemos 2 actividades :(");
 }
 
-
-
+console.log("Adios", nombre);
